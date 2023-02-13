@@ -33,6 +33,8 @@ public class TennisPlayerApplication implements CommandLineRunner {
 				new Player(4, "Thiem", "Austria",
 						Date.valueOf("1993-09-03"), 17)));
 
+		logger.info("French Players: {}", dao.getPlayerByNationality("France"));
+
 		logger.info("Deleting Player with Id 2: {}", dao.deletePlayerById(2));
 
 		logger.info("All Players Data: {}", dao.getAllPlayers());
