@@ -3,12 +3,13 @@ package io.datajek.springdatajpa;
 import java.sql.Date;
 import java.sql.Time;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.NamedQuery;
 
 @Entity
+@NamedQuery(name="get_all_players", query="SELECT p FROM Player p")
 public class Player {
     @Id
     @GeneratedValue
@@ -84,6 +85,11 @@ public class Player {
     public String toString() {
         return "\nPlayer [id= " + id + ", name= " + name + ", nationality= " + nationality + ", birthDate= " + birthDate
                 + ", titles= " + titles + "]";
+    }
+
+    public void setBirthDate(Time time) {
+        // TODO Auto-generated method stub
+
     }
 
 
